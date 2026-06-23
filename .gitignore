@@ -1,0 +1,16 @@
+# Abaikan folder node_modules jika ada proyek JavaScript
+node_modules/
+
+# Abaikan file log sampah
+*.log
+
+# Abaikan file rahasia/konfigurasi pribadi
+.env
+KALKULATOR.JS
+RNG.js
+style.css
+ToCamelCase.js
+gitignore
+TUGAS.js
+Tugas1.js
+ULANGAN.js
