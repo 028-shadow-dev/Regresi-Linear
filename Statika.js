@@ -71,9 +71,9 @@ function FindDetAandB(DataX,DataY, valueX) {
             <p><b>Persamaan Regresi:</b> 
                 <span style="color: blue; font-weight: bold;">Y = ${a.toFixed(4)} + (${b.toFixed(4)})X</span>
             </p>
-            <p><b>Jika dianggap sebagai nilaimu:</b> 
+            <p><b>Jika dianggap sebagai nilai:</b> 
             <br>
-                <span style="color: blue; font-weight: bold;">Jika kamu belajar 0 jam  kamu mendapatkan nilai = ${a.toFixed(1)}</span>
+                <span style="color: blue; font-weight: bold;">Jika kamu belajar 0 jam kamu mendapatkan nilai = ${a.toFixed(1)}</span>
                 <br>
                 <span style="color: blue; font-weight: bold;">setiap kamu belajar 1 jam nilai mu meningkat = ${b.toFixed(1)}</span>
                 <br>
