@@ -69,13 +69,14 @@ function FindDetAandB(DataX,DataY, valueX) {
     let indeksData = DataX.findIndex(Y => Number(Y).toFixed(4) === Number(valueX).toFixed(4));
     let hitungError = 0;
     let errorTeks = '';
+    let persentaseError = 0;
     if (indeksData !== -1) {
         let yAktual = Number(DataY[indeksData]);
         hitungError = yAktual - prediksiY;
+        persentaseError = (hitungError / yAktual) * 100;
     } else {
         errorTeks = "Tidak dapat dihitung (Nilai X baru/tidak ada di data awal)";
     }
-    // let persentaseError = (hitungError / yAktual) * 100;
 
 
     const htmlKonten = `
@@ -105,13 +106,16 @@ function FindDetAandB(DataX,DataY, valueX) {
                 <br>
                 <span style="color: blue; font-weight: bold;">setiap kamu belajar 1 jam nilai mu meningkat = ${b.toFixed(1)}</span>
                 <br>
-                <span style="color: blue; font-weight: bold;">karna kamu memasukan nilai X ${valueX} maka nilai akhir mu jika belajar ${valueX}  = ${prediksiY.toFixed(1)}</span>
+                <span style="color: blue; font-weight: bold;">karna kamu memasukan nilai X ${valueX} maka nilai akhir mu jika belajar ${valueX} jam = ${prediksiY.toFixed(1)}</span>
             </p>
             <hr>
             <p><b>Prediksi:</b> Jika besar nilai X = <b>${valueX}</b>, maka prediksi nilai Y = <mark><b>${prediksiY.toFixed(4)}</b></mark></p>
             <hr>
             <p><b>Error:</b></p>
+            <p>jika error menunjukan -(min) maka model regresi overestimate (ketinggian menebak)</p><br>
+            <p>jika error menunjukan +(positif) maka model regresi maka model regresi underestimate (kurang menebak)</p>
             <p>Error: ${errorTeks ? errorTeks : hitungError}</p>
+            <p>Error: ${errorTeks ? errorTeks : persentaseError}%</p>
         </div>
     `;
     
