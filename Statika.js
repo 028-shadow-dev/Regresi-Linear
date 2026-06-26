@@ -77,6 +77,11 @@ function FindDetAandB(DataX,DataY, valueX) {
     } else {
         errorTeks = "Tidak dapat dihitung (Nilai X baru/tidak ada di data awal)";
     }
+    if(hitungError > 0){
+        errorTeks = "terlalu underestimate (kurang menebak)";
+    } else {
+        errorTeks = "terlalu verestimate (ketinggian menebak)";
+    }
 
 
     const htmlKonten = `
@@ -112,7 +117,7 @@ function FindDetAandB(DataX,DataY, valueX) {
             <p><b>Prediksi:</b> Jika besar nilai X = <b>${valueX}</b>, maka prediksi nilai Y = <mark><b>${prediksiY.toFixed(4)}</b></mark></p>
             <hr>
             <p><b>Error:</b></p>
-            <p>jika error menunjukan -(min) maka model regresi overestimate (ketinggian menebak)</p><br>
+            <p>jika error menunjukan -(min) maka model regresi overestimate (ketinggian menebak)</p>
             <p>jika error menunjukan +(positif) maka model regresi maka model regresi underestimate (kurang menebak)</p>
             <p>Error: ${errorTeks ? errorTeks : hitungError}</p>
             <p>Error: ${errorTeks ? errorTeks : persentaseError}%</p>
